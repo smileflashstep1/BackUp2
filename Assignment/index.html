@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<style type="text/css">
+	.modal-content {
+   background-image: url(bg-img3.jpg);
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family:serif;
+    font-weight: bold
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#abc1 {
+	position: relative;
+	top:200px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+</style>
+</head>
+<body background="bg-img1.jpg">
+	<center><a href="#" onclick="openNav()" id="abc1" class="btn btn-danger btn-lg" style="font-family:serif;font-weight: bold;">Click Here to Enter</a></center>
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title" id="myModalLabel" style="font-family:serif;font-weight: bold;color:#A52A2A">Hello, Welcome</h2>
+                                        </div>
+                                        <div class="modal-body">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <center><a href="#" onclick="openNav()" id="abc" class="btn btn-danger btn-lg" style="font-family:serif;font-weight: bold;">Click Here to Enter</a></center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<div id="mySidenav" class="sidenav">
+	      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center" style="color:white;">DevOps</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+	 <div class="col-sm-6 col-md-4 col-lg-3" id="mydiv">
+        <div class="panel panel-default panel-pet">
+          <div class="panel-heading">
+            <Center><h3 class="panel-title" style="font-family:serif;font-weight: bold;">User InterFace</h3></Center>
+          </div>
+          <div class="panel-body">
+            <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
+            <br/><br/>
+            <center><strong>Breed</strong>: <span class="pet-breed" style="font-family:serif;font-weight: bold;">Golden Retriever</span><br/>
+            <strong>Age</strong>: <span class="pet-age">3</span><br/>
+            <strong>Location</strong>: <span class="pet-location" style="font-family:serif;font-weight: bold;">Warren, MI</span><br/><br/>
+            <button class="btn btn-danger btn-complete" type="button" data-id="0" style="font-family:serif;font-weight: bold;">Get Update</button>
+            <button class="btn btn-danger btn-adopt" type="Submit" data-id="0" style="font-family:serif;font-weight: bold;">Submit</button><br/><br/></center>
+            <label class="status" data-id="0" id="myLabel"></label>
+          </div>
+        </div>
+      </div>
+</div>
+  <script type="text/javascript"> 
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+    $("#abc").click(function(){
+    	$("#myModal").modal('hide');
+    });
+    $("#abc1").click(function(){
+    	$("#myModal").modal('hide');
+    });
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+    }
+/*function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }*/
+    $("#mydiv").hover(
+    	function() {
+    	$("#mydiv1").fadeOut(500);
+    	$("#mydiv").animate({
+    		left: '150px',
+            height: '650px',
+            width: '650px'
+    	});
+    },
+    function() {
+    		$("#mydiv1").fadeIn(1000);
+    	    $("#mydiv").animate({
+    		left: '0px',
+            height: '340px',
+            width: '338px'
+    	});
+    });
+
+
+        /*$("#mydiv1").hover(
+    	function() {
+    	$("#mydiv").fadeOut();
+    	$("#mydiv1").animate({
+    		left: '150px',
+            height: '650px',
+            width: '650px'
+    	});
+    },
+    function() {
+    		$("#mydiv").show(1000);
+    	    $("#mydiv1").animate({
+    		left: '10px',
+            height: '340px',
+            width: '338px'
+    	});
+    });*/
+
+  </script>
+</body>
+</html>
